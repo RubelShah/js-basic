@@ -25,9 +25,24 @@ function processRequest(response){
 //     console.log(error)
 // })
 
-async function dowork(){
-   try{
-        const response = await makerequest('facebook')
+// async function dowork(){
+//    try{
+//         const response = await makerequest('facebook')
+//         console.log('Respose received')
+//         const processedRespose = await processRequest(response)
+//         console.log(processedRespose)
+
+//    }catch(err){
+//       console.log(err);
+//    }
+// }
+// dowork()
+
+
+//use of IIFE(Immediately Invoked Function Expression)
+(async function(){
+    try{
+        const response = await makerequest('Google')
         console.log('Respose received')
         const processedRespose = await processRequest(response)
         console.log(processedRespose)
@@ -35,5 +50,4 @@ async function dowork(){
    }catch(err){
       console.log(err);
    }
-}
-dowork()
+})()
